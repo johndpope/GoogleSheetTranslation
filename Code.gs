@@ -274,7 +274,6 @@ function generateIOSTranslationFile(os, language, data) {
         var translation = section['values'][translationNumber];
 
         if (translation != undefined && translation['key'] != undefined && translation['value'] != undefined) {
-          var key = translation['key'].split("_").join(".")
           var value = translation['value'].replace(/#(\d*?)\?(.*?)#/g, typeReplacerIOS).replace(/"/g, '\\\"')
           translationContent += '"' + key + '" = "' + value + '";\n';
         }
@@ -414,7 +413,7 @@ function generateTranslationSpreadsheet() {
  * Returns the application name.
  */
 function getAppName() {
-  return "MyLocalizedApp"
+  return "App Name"
 }
 
 /**
